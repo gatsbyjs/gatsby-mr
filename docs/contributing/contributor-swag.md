@@ -1,5 +1,5 @@
 ---
-title: Free Swag for Gatsby Contributors!
+Title: Free Swag for Gatsby Contributors!
 ---
 
 Gatsby relies on contributors from the open source community, and we want to make sure you know how much it means to us that you’re willing to put time and effort into [contributing to Gatsby](/contributing/how-to-contribute/).
@@ -14,6 +14,8 @@ If you contribute to the Gatsby organization on GitHub, you can claim your swag 
 
 If you’ve contributed in other ways, such as giving talks about Gatsby, teaching others to use it, writing Gatsby articles/tutorials, participating in a Gatsby research project, or any other way, please email <mailto:marketing@gatsbyjs.com> or [tweet at Gatsby on Twitter](https://twitter.com/gatsbyjs) to claim your swag.
 
+Check out the [how to contribute](https://www.gatsbyjs.com/contributing/how-to-contribute/) docs for more examples of contributions that qualify for free swag. Email us at team@gatsbyjs.com if you’re a non-code contributor and want your free swag.
+
 ### Details about free swag
 
 - We will send one item from our [swag store](https://store.gatsbyjs.org/) per swag tier
@@ -22,5 +24,12 @@ If you’ve contributed in other ways, such as giving talks about Gatsby, teachi
 - Not all items are eligible due to high cost to create the swag. We’ll make it clear which items are not eligible
 - There’s a limit of one free swag item per swag tier
 - Shipping is free worldwide
+
+### Short Version to get free swag
+
+1. Head to the swag store
+2. Log in with your GitHub account at the top right of the page
+3. Request a discount code with your name and email
+4. Use that discount code at checkout to get one free item from the swag store!
 
 > **NOTE:** Worldwide free shipping is a pilot program. If shipping costs get out of control, we may need to adjust this policy in the future.
