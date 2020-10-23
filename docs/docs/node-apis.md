@@ -1,15 +1,15 @@
 ---
 title: Gatsby Node APIs
-description: पृष्ठे तयार करण्यासारख्या सामान्य वापरासाठी Gatsby बिल्ड प्रक्रियेत वापरल्या जाणार्‍या नोड एपीआयवरील दस्तऐवजीकरण
+description: Documentation on Node APIs used in Gatsby build process for common uses like creating pages
 jsdoc: ["gatsby/src/utils/api-node-docs.js"]
 apiCalls: NodeAPI
 ---
 
-ग्राफ्स डेटा लेयरमध्ये आपल्या साइटचा डेटा नियंत्रित करण्यासाठी Gatsby प्लगइन आणि साइट बिल्डर्सना बरेच एपीआय देते.
+Gatsby gives plugins and site builders many APIs for controlling your site's data in the GraphQL data layer.
 
-## एसिंक प्लगइन
+## Async plugins
 
-जर आपले प्लगइन async ऑपरेशन्स करीत असेल (डिस्क I / O, डेटाबेस प्रवेश, रिमोट एपीआय कॉल करणे, इ.) आपण एकतर वचन दिले पाहिजे किंवा 3 रा वितर्कात पास केलेला कॉलबॅक वापरणे आवश्यक आहे. काही एपीआय म्हणून प्लगइन समाप्त झाल्यावर गॅटस्बीला हे माहित असणे आवश्यक आहे, योग्यरित्या कार्य करण्यासाठी, आधीचे API पूर्ण करणे आवश्यक आहे. अधिक माहितीसाठी [डीबगिंग एसिंक लाइफसायकल](/docs/debugging-async-lifecycles/)पहा.
+If your plugin performs async operations (disk I/O, database access, calling remote APIs, etc.) you must either return a promise or use the callback passed to the 3rd argument. Gatsby needs to know when plugins are finished as some APIs, to work correctly, require previous APIs to be complete first. See [Debugging Async Lifecycles](/docs/debugging-async-lifecycles/) for more info.
 
 ```javascript
 // Promise API
@@ -26,8 +26,8 @@ exports.createPages = (_, pluginOptions, cb) => {
 }
 ```
 
-जर आपले प्लगइन एसिंक कार्य करत नसेल तर आपण थेट परत येऊ शकता.
+If your plugin does not do async work, you can just return directly.
 
-## वापर
+## Usage
 
-आपल्या प्रकल्पाचा मूळ मध्ये `gatsby-node.js` नावाची फाइल त्यांना निर्यात करून हे APIs कोणत्याही अंमलबजावणी.
+Implement any of these APIs by exporting them from a file named `gatsby-node.js` in the root of your project.
