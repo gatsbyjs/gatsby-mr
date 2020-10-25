@@ -5,7 +5,7 @@ tableOfContentsDepth: 1
 
 आपल्या वेबसाइटवर शैली जोडण्याचे बरेच मार्ग आहेत; अधिकृत आणि समुदाय प्लगइनद्वारे गॅट्सबी जवळजवळ प्रत्येक संभाव्य पर्यायाचे समर्थन करते.
 
-## वापरत आहे global CSS फायली विना Layout component
+## global CSS फायल विना वापरण्यासाठी
 
 ### पूर्व शर्ती
 
@@ -14,7 +14,7 @@ tableOfContentsDepth: 1
 
 ### दिशानिर्देश
 
-1. तयार करा एक global CSS फाईल म्हणून `src/styles/global.css` आणि खालील फाईलमध्ये पेस्ट करा:
+1. global CSS फाईल म्हणून src/styles/global.css तयार करा आणि खालील फाईलमध्ये पेस्ट करा :
 
 ```css:title=src/styles/global.css
 html {
