@@ -9,8 +9,8 @@ tableOfContentsDepth: 1
 
 ### पूर्व शर्ती
 
-- विद्यमान [Gatsby site](/docs/quick-start/) सह index page component
-- एक `gatsby-browser.js` फाईल
+- [Gatsby site](/docs/quick-start/) index page component
+- `gatsby-browser.js` फाईल
 
 ### दिशानिर्देश
 
