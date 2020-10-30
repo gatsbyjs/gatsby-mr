@@ -304,7 +304,7 @@ export default () => (
 
 ### CSS-in-JS
 
-CSS-in-JS हा घटक-आधारित स्टाईल दृष्टीकोन आहे. सामान्यत :, हा एक नमुना आहे जेथे जावास्क्रिप्ट वापरुन [CSS is composed inline using JavaScript](https://reactjs.org/docs/faq-styling.html#what-is-css-in-js).
+CSS-in-JS हा घटक-आधारित स्टाईल दृष्टीकोन आहे. सामान्यत :, हा एक नमुना आहे जेथे JavaScript वापरुन [CSS is composed inline using JavaScript](https://reactjs.org/docs/faq-styling.html#what-is-css-in-js).
 
 #### Gatsby सह CSS-in-JS वापरणे
 
