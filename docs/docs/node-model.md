@@ -1,12 +1,12 @@
 ---
 title: Node Model
-description: Gatsby's ग्राफक्यूएल डेटा लेयरमधील नोड्सचे मॉडेल स्पष्ट करणारे दस्तऐवजीकरण
+description: Gatsby's GraphQL डेटा लेयरमधील नोड्सचे मॉडेल स्पष्ट करणारे दस्तऐवजीकरण
 jsdoc: ["gatsby/src/schema/node-model.js"]
 apiCalls: NodeModel
 contentsHeading: Methods
 ---
 
-Gatsby त्याचे अंतर्गत डेटा स्टोअर आणि क्वेरी क्षमता `context.node Model` वर ग्राफक्यूएल फील्ड रेझोलॉवरवर उघडकीस आणल्या.
+Gatsby `context.nodeModel` वर GraphQL क्षेत्रात निराकरणकर्ता त्याच्या अंतर्गत डेटा संचयित आणि क्वेरी क्षमता पोहचवतो.
 
 ## वापर उदाहरणे
 
