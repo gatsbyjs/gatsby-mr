@@ -2,10 +2,8 @@
 title: Data in Gatsby
 typora-copy-images-to: ./
 disableTableOfContents: true
----
-
-Welcome to Part Four of the tutorial! Halfway through! Hope things are starting
-to feel pretty comfortable 😀
+---ट्यूटोरियल च्या चार भाग आपले स्वागत आहे! अर्ध्या मार्गाने! आशा आहे की गोष्टी सुरू होत आहेत
+खूप आरामदायक वाटत
 
 ## Recap of the first half of the tutorial
 
