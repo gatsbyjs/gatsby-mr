@@ -7,98 +7,97 @@ disableTableOfContents: true
 
 ## Recap of the first half of the tutorial
 
-So far, you've been learning how to use React.js—how powerful it is to be able to
-create your _own_ components to act as custom building blocks for websites.
+आतापर्यंत, आपण React.js कसे वापरावे हे शिकत आहात - हे करण्यास सक्षम असणे किती शक्तिशाली आहे
+वेबसाइटसाठी सानुकूल बिल्डिंग ब्लॉक्स म्हणून कार्य करण्यासाठी आपले _ डाउन_ घटक तयार करा.
 
-You’ve also explored styling components using CSS Modules.
+आपण CSS मॉड्यूल्स वापरुन स्टाईलिंग घटकांचे देखील शोध लावले आहेत.
 
 ## What's in this tutorial?
 
-In the next four parts of the tutorial (including this one), you'll be diving into the Gatsby data layer, which is a powerful feature of Gatsby that lets you easily build sites from Markdown, WordPress, headless CMSs, and other data sources of all flavors.
+पुढील चार ट्यूटोरियलमध्ये (यासह), आपण गॅटस्बी डेटा लेयरमध्ये गोती घेत असाल, जे गॅटस्बीचे एक वैशिष्ट्यपूर्ण वैशिष्ट्य आहे जे आपल्याला मार्कडाउन, वर्डप्रेस, हेडलेस सीएमएस आणि इतर डेटा स्रोतांमधून सहजपणे साइट तयार करू देते. सर्व फ्लेवर्सचा.
 
-**NOTE:** Gatsby’s data layer is powered by GraphQL. For an in-depth tutorial on
-GraphQL, we recommend [How to GraphQL](https://www.howtographql.com/).
+**NOTE:** गॅटस्बीचा डेटा स्तर ग्राफिक द्वारा समर्थित आहे. सखोल ट्यूटोरियल साठी
+आलेख, आम्ही शिफारस करतो [ग्राफिक कसे करावे] (https://www.howtographicql.com/).
 
 ## Data in Gatsby
 
-A website has four parts: HTML, CSS, JS, and data. The first half of the
-tutorial focused on the first three. Now let’s learn how to use data in Gatsby
-sites.
+वेबसाइटचे चार भाग आहेत: एचटीएमएल, सीएसएस, जेएस आणि डेटा. पहिल्या सहामाहीत
+पहिल्या तीनवर लक्ष केंद्रित केले. आता गॅटस्बी मधील डेटा कसा वापरायचा ते पाहू
+साइट.
 
 **What is data?**
 
-A very computer science-y answer would be: data is things like `"strings"`,
-integers (`42`), objects (`{ pizza: true }`), etc.
+संगणकाच्या विज्ञान शास्त्राचे उत्तर असे असेलः डेटा म्हणजे `" तार "things,
+पूर्णांक (`42`), ऑब्जेक्ट्स (` {पिझ्झा: खरे} `), इ.
 
-For the purpose of working in Gatsby, however, a more useful answer is
-"everything that lives outside a React component".
+गॅटस्बीमध्ये काम करण्याच्या उद्देशाने, तथापि, अधिक उपयुक्त उत्तर आहे
+"रिएक्ट घटकाच्या बाहेर राहणारी प्रत्येक गोष्ट".
 
-So far, you've been writing text and adding images _directly_ in components.
-Which is an _excellent_ way to build many websites. But, often you want to store
-data _outside_ components and then bring the data _into_ the component as
-needed.
+आतापर्यंत, आपण मजकूर लिहित आहात आणि घटकांमध्ये_निर्देशित_ प्रतिमा जोडत आहात.
+बर्‍याच वेबसाइट्स बनविण्याचा हा एक एक्सेलेंट_ मार्ग आहे. परंतु, बर्‍याचदा आपण संचयित करू इच्छिता
+डेटा _outside_ घटक आणि नंतर घटक _ डेटा _ घटक म्हणून आणा
+आवश्यक
 
-If you're building a site with WordPress (so other contributors
-have a nice interface for adding & maintaining content) and Gatsby, the _data_
-for the site (pages and posts) are in WordPress and you _pull_ that data, as
-needed, into your components.
+आपण वर्डप्रेससह साइट तयार करत असल्यास (जेणेकरून इतर योगदानकर्ते)
+सामग्री जोडण्यासाठी आणि देखरेखीसाठी एक चांगला इंटरफेस आहे) आणि गॅटस्बी, _डेटा_
+साइटसाठी (पृष्ठे आणि पोस्ट) वर्डप्रेसमध्ये आहेत आणि आपण तो डेटा _ पुल _ करा
+आवश्यक, आपल्या घटकांमध्ये.
 
-Data can also live in file types like Markdown, CSV, etc. as well as databases
-and APIs of all sorts.
+डेटा फाईल प्रकारात मार्कडाउन, सीएसव्ही इत्यादी तसेच डेटाबेसमध्येही राहू शकतो
+आणि सर्व प्रकारच्या एपीआय.
 
-**Gatsby's data layer lets you pull data from these (and any other source)
-directly into your components**—in the shape and form you want.
+** गॅटस्बीचा डेटा स्तर आपल्याला यावरून (आणि इतर कोणताही स्रोत) डेटा खेचू देतो
+थेट आपल्या घटकांमध्ये ** - आपल्याला पाहिजे असलेल्या आकार आणि फॉर्ममध्ये.
 
 ## Using Unstructured Data vs GraphQL
 
 ### Do I have to use GraphQL and source plugins to pull data into Gatsby sites?
 
-Absolutely not! You can use the node `createPages` API to pull unstructured data into Gatsby pages directly, rather than through the GraphQL data layer. This is a great choice for small sites, while GraphQL and source plugins can help save time with more complex sites.
+नक्कीच नाही! आपण ग्राफिक्स डेटा लेयरऐवजी गॅट्सबी पृष्ठांवर थेट अप्रबंधित डेटा खेचण्यासाठी नोड `क्रिएटपेजेस` एपीआय वापरू शकता. छोट्या साइटसाठी ही एक चांगली निवड आहे, तर ग्राफिक्यूएल आणि सोर्स प्लगइन अधिक जटिल साइटसह वेळ वाचविण्यात मदत करू शकतात.
 
-See the [Using Gatsby without GraphQL](/docs/using-gatsby-without-graphql/) guide to learn how to pull data into your Gatsby site using the node `createPages` API and to see an example site!
+नोड `क्रिएटपेजेस` एपीआय वापरुन आपल्या गॅटस्बी साइटमध्ये डेटा कसा काढायचा आणि एखादी उदाहरण साइट पहाण्यासाठी शिकण्यासाठी [ग्राफिक्सशिवाय गॅटस्बी वापरणे] (/ डॉक्स / वापरणे-गॅट्सबी-विना-ग्राफिकएल /) मार्गदर्शक पहा!
 
 ### When do I use unstructured data vs GraphQL?
 
-If you're building a small site, one efficient way to build it is to pull in unstructured data as outlined in this guide, using `createPages` API, and then if the site becomes more complex later on, you move on to building more complex sites, or you'd like to transform your data, follow these steps:
-
-1.  Check out the [Plugin Library](/plugins/) to see if the source plugins and/or transformer plugins you'd like to use already exist
-2.  If they don't exist, read the [Plugin Authoring](/docs/creating-plugins/) guide and consider building your own!
+आपण एखादी छोटी साइट तयार करत असल्यास, त्यास तयार करण्याचा एक प्रभावी मार्ग म्हणजे `क्रिएटपेजेस` एपीआय वापरुन या मार्गदर्शकात नमूद केल्यानुसार अ-संरचित डेटा खेचणे आणि नंतर जर साइट नंतर अधिक जटिल झाली तर आपण आणखी इमारतीकडे जा जटिल साइट किंवा आपण आपला डेटा बदलू इच्छित असाल तर या चरणांचे अनुसरण करा:
+1. आपण वापरू इच्छित असलेले स्त्रोत प्लगइन आणि / किंवा ट्रान्सफॉर्मर प्लगइन आधीपासून विद्यमान आहेत किंवा नाही हे पाहण्यासाठी [प्लगइन लायब्ररी] (/ प्लगइन /) पहा.
+२. ते अस्तित्वात नसल्यास, [प्लगिन प्रमाणीकरण] (/ डॉक्स / तयार करणे-प्लगइन /) मार्गदर्शक वाचा आणि आपल्या स्वतःच्या इमारतीचा विचार करा!
 
 ### How Gatsby's data layer uses GraphQL to pull data into components
 
-There are many options for loading data into React components. One of the most
-popular and powerful of these is a technology called
-[GraphQL](https://graphql.org/).
+रीएक्ट घटकांमध्ये डेटा लोड करण्यासाठी बरेच पर्याय आहेत. सर्वात एक
+यापैकी लोकप्रिय आणि शक्तिशाली असे तंत्रज्ञान म्हटले जाते
+[ग्राफिकल] (https://ographicql.org/).
 
-GraphQL was invented at Facebook to help product engineers _pull_ needed data into
-components.
+उत्पादन अभियंत्यांना आवश्यक असलेल्या डेटामध्ये _पुल_ करण्यात मदत करण्यासाठी ग्राफिकचा शोध फेसबुकवर लागला होता
+घटक.
 
-GraphQL is a **q**uery **l**anguage (the _QL_ part of its name). If you're
-familiar with SQL, it works in a very similar way. Using a special syntax, you describe
-the data you want in your component and then that data is given
-to you.
+आलेख एक ** क्यू ** उरी ** एल ** इंग्रजी (त्याच्या नावाचा _क्यूएल_अ भाग) आहे. जर तुम्ही असाल
+एसक्यूएलशी परिचित, हे अगदी अशाच प्रकारे कार्य करते. विशेष वाक्यरचना वापरुन, आपण वर्णन करा
+आपल्याला आपल्या घटकामध्ये हवा असलेला डेटा आणि नंतर तो डेटा दिला जातो
+तुला.
 
-Gatsby uses GraphQL to enable components to declare the data they need.
+घटकांना आवश्यक असलेला डेटा घोषित करण्यासाठी घटक सक्षम करण्यासाठी गॅटस्बी ग्राफिकल वापरते.
 
 ## Create a new example site
 
-Create another new site for this part of the tutorial. You're going to build a Markdown blog called "Pandas Eating Lots". It's dedicated to showing off the best pictures and videos of pandas eating lots of food. Along the way, you'll be dipping your toes into GraphQL and Gatsby's Markdown support.
+ट्यूटोरियलच्या या भागासाठी आणखी एक नवीन साइट तयार करा. आपण "पांडास खाण्याचे बरेच" नावाचा एक मार्कडाउन ब्लॉग तयार करणार आहात. पांडे भरपूर खाल्ले जाणारे सर्वोत्कृष्ट चित्रे आणि व्हिडिओ दाखविण्यासाठी हे समर्पित आहे. मार्गावर, आपण ग्राफिकल आणि गॅटस्बीच्या मार्कडाउन समर्थनात आपले बोट बुडवाल.
 
-Open a new terminal window and run the following commands to create a new Gatsby site in a directory called `tutorial-part-four`. Then navigate to the new directory:
+एक नवीन टर्मिनल विंडो उघडा आणि `ट्यूटोरियल-भाग-चार called नावाच्या निर्देशिकेत नवीन गॅटस्बी साइट तयार करण्यासाठी पुढील आज्ञा चालवा. नंतर नवीन निर्देशिका वर नॅव्हिगेट करा:
 
 ```shell
 gatsby new tutorial-part-four https://github.com/gatsbyjs/gatsby-starter-hello-world
 cd tutorial-part-four
 ```
 
-Then install some other needed dependencies at the root of the project. You'll use the Typography theme
-"Kirkham", and you'll try out a CSS-in-JS library, ["Emotion"](https://emotion.sh/):
+नंतर प्रोजेक्टच्या मुळाशी काही इतर आवश्यक अवलंबन स्थापित करा. आपण टाइपोग्राफी थीम वापरू
+"Kirkham", आणि आपण प्रयत्न कराल CSS-in-JS library, ["Emotion"](https://emotion.sh/):
 
 ```shell
 npm install --save gatsby-plugin-typography typography react-typography typography-theme-kirkham gatsby-plugin-emotion @emotion/core
 ```
 
-Set up a site similar to what you ended with in [Part Three](/tutorial/part-three). This site will have a layout component and two page components:
+आपण ज्यात संपले त्यासारखी साइट सेट करा[Part Three](/tutorial/part-three). या साइटमध्ये लेआउट घटक आणि दोन पृष्ठ घटक असतील:
 
 ```jsx:title=src/components/layout.js
 import React from "react"
