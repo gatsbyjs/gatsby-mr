@@ -1,5 +1,5 @@
 ---
-title: Adding a Service Worker
+title: Adding a Service Worker/सेवा कामगार जोडत आहे
 ---
 
 ## सर्विस वर्कर्स म्हणजे काय
