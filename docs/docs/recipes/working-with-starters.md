@@ -3,36 +3,36 @@ title: "Recipes: Working with Starters"
 tableOfContentsDepth: 1
 ---
 
-[Starters](/docs/starters/) are boilerplate Gatsby sites maintained officially, or by the community.
+[Starters](/docs/starters/) बॉयलरप्लेट गॅटस्बी साइट आहेत त्यांची अधिकृत देखभाल केली जाते, किंवा समुदायाद्वारे.
 
-## Using a starter
+## स्टार्टर वापरणे
 
-### Prerequisites
+### पूर्व शर्ती
 
-- The [Gatsby CLI](/docs/gatsby-cli) installed
+- द [Gatsby CLI](/docs/gatsby-cli) स्थापित करा
 
-### Directions
+### दिशानिर्देश
 
-1. Find the starter you'd like to use. (_The [Starter Library](/starters/?v=2) is a good place to look!_)
+1. आपण वापरू इच्छित असलेले स्टार्टर शोधा. (द [Starter Library](/starters/?v=2) पाहण्याची चांगली जागा आहे!_)
 
-2. Generate a new site based on the starter. In the terminal, run:
+2. स्टार्टरवर आधारित नवीन साइट तयार करा. टर्मिनल मध्ये, चालवा:
 
 ```shell
 gatsby new {your-project-name} {link-to-starter}
 ```
 
-> _Don't run the above command as-is -- remember to replace {your-project-name} and {link-to-starter}!_
+> _वरील कमांड जसे आहे तसे चालवू नका -- पुनर्स्थित लक्षात ठेवा {your-project-name} आणि {link-to-starter}!_
 
-3. Run your new site:
+3. आपली नवीन साइट चालवा:
 
 ```shell
 cd {your-project-name}
 gatsby develop
 ```
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- Follow a [more detailed guide](/docs/starters/) on using Gatsby starters.
-- Learn how to use the [Gatsby CLI](/docs/gatsby-cli) tool to use starters in [tutorial part one](/tutorial/part-one/#using-gatsby-starters)
-- Browse the [Starter Library](/starters/?v=2)
-- Check out Gatsby's [official default starter](https://github.com/gatsbyjs/gatsby-starter-default)
+- अनुसरण करा [more detailed guide](/docs/starters/) Gatsby स्टार्टर्स वापरुन.
+- जाणून घ्या [Gatsby CLI](/docs/gatsby-cli) कासा वापर्ता आणि शिका starters [tutorial part one](/tutorial/part-one/#using-gatsby-starters) माधे.
+- ब्राउझ करा [Starter Library](/starters/?v=2)
+- तपासा Gatsby's [official default starter](https://github.com/gatsbyjs/gatsby-starter-default)
