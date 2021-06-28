@@ -9,11 +9,11 @@ tableOfContentsDepth: 1
 
 ### पूर्व शर्ती
 
-- द [Gatsby CLI](/docs/gatsby-cli) स्थापित करा
+- The [Gatsby CLI](/docs/gatsby-cli) installed
 
-### दिशानिर्देश
+### सूचना
 
-1. आपण वापरू इच्छित असलेले स्टार्टर शोधा. (द [Starter Library](/starters/?v=2) पाहण्याची चांगली जागा आहे!_)
+1. आपण वापरू इच्छित असलेले स्टार्टर शोधा. ([Starter Library](/starters/?v=2) पाहण्याची चांगली जागा_)
 
 2. स्टार्टरवर आधारित नवीन साइट तयार करा. टर्मिनल मध्ये, चालवा:
 
