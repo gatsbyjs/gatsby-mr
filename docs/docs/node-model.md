@@ -6,9 +6,10 @@ apiCalls: NodeModel
 contentsHeading: Methods
 ---
 
-Gatsby exposes its internal data store and query capabilities to GraphQL field resolvers on `context.nodeModel`.
+Gatsby ने त्याचे अंतर्गत data store आणि query capabilities चे प्रदर्शन GraphQL field resolvers `context.nodeModel` वर केले अहे. 
 
-## Example Usage
+
+## उदाहरणार्थ 
 
 ```javascript:title=gatsby-node.js
 createResolvers({
