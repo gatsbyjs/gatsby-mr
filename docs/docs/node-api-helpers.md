@@ -7,9 +7,9 @@ contentsHeading: Shared helpers
 showTopLevelSignatures: true
 ---
 
-The first argument passed to each of [Gatsby’s Node APIs](/docs/node-apis/) is an object containing a set of helpers. Helpers shared by all Gatsby’s Node APIs are documented in [Shared helpers](#shared-helpers) section.
+पहिला Argument प्रत्येकाला पास झाला. [Gatsby’s Node APIs](/docs/node-apis/) एक वस्तू आहे containing एक जोड of helpers . Helpers shared by all Gatsby’s Node APIs are दस्तऐवज in [Shared helpers](#shared-helpers) विभाग.
 
-```javascript
+```javascriptc
 // in gatsby-node.js
 exports.createPages = gatsbyNodeHelpers => {
   const { actions, reporter } = gatsbyNodeHelpers
@@ -17,7 +17,7 @@ exports.createPages = gatsbyNodeHelpers => {
 }
 ```
 
-Common convention is to destructure helpers right in argument list:
+सामान्य convention is to destructure helpers right in argument यादी:
 
 ```javascript
 // in gatsby-node.js
