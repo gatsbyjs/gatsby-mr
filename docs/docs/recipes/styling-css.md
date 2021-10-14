@@ -3,18 +3,18 @@ title: "Recipes: Styling with CSS"
 tableOfContentsDepth: 1
 ---
 
-There are so many ways to add styles to your website; Gatsby supports almost every possible option, through official and community plugins.
+आपल्या वेबसाइटवर शैली जोडण्याचे बरेच मार्ग आहेत; अधिकृत आणि समुदाय प्लगइनद्वारे गॅट्सबी जवळजवळ प्रत्येक संभाव्य पर्यायाचे समर्थन करते.
 
-## Using global CSS files without a Layout component
+## लेआउट कौम्पोनॅन्ट विना global CSS फाईल्स वापरणे
 
-### Prerequisites
+### पूर्व शर्ती
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
-- A `gatsby-browser.js` file
+-विद्यमान Gatsby site अनुक्रमणिका page कौम्पोनॅन्ट
+- `gatsby-browser.js` फाईल
 
-### Directions
+### दिशानिर्देश
 
-1. Create a global CSS file as `src/styles/global.css` and paste the following into the file:
+1. global CSS फाईल म्हणून src/styles/global.css तयार करा आणि खालील फाईलमध्ये पेस्ट करा :
 
 ```css:title=src/styles/global.css
 html {
@@ -26,37 +26,37 @@ p {
 }
 ```
 
-2. Import the global CSS file in the `gatsby-browser.js` file such as the following:
+2. आयात करा global CSS file मध्ये `gatsby-browser.js` खालील प्रमाणे फाइल करा:
 
 ```javascript:title=gatsby-browser.js
 import "./src/styles/global.css"
 ```
 
-> **Note:** You can also make use of `require('./src/styles/global.css')` to import the global CSS file in your `gatsby-config.js` file.
+> **टीप:** आपण याचा वापर देखील करू शकता `require('./src/styles/global.css')` आयात करण्यासाठी global CSS file आपल्या मध्ये `gatsby-config.js` फाईल.
 
-3. Run `gatsby-develop` to observe the global styling being applied across your site.
+3. चालवा `gatsby-develop` देखणे global styling आपल्या वेबसाइटवर लागू केले जात आहे.
 
-> **Note:** This approach is not the best fit if you are using CSS-in-JS for styling your site, in which case a layout page with all the shared components should be used. This is covered in the next recipe.
+> **टीप:** आपण आपल्या साइटच्या स्टाईलसाठी सीएसएस-इन-जेएस वापरत असल्यास हा दृष्टिकोन सर्वात योग्य नाही, अशा परिस्थितीत सर्व सामायिक घटकांसह लेआउट पृष्ठ वापरावे. हे पुढील कृती मध्ये समाविष्ट आहे.
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- More on [adding global styles without a layout component](/docs/global-css/#adding-global-styles-without-a-layout-component)
+- अजून [adding global styles without a layout component](/docs/global-css/#adding-global-styles-without-a-layout-component)
 
-## Using global styles in a layout component
+## वापरत आहे global styles आत मधॆ layout component
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
+- विद्यमान [Gatsby site](/docs/quick-start/) सह index page component
 
-### Directions
+### दिशानिर्देश
 
-You can add global styles to a [shared layout component](/tutorial/part-three/#your-first-layout-component). This component is used for things that are common throughout the site, like a header or footer.
+आपण जोडू शकता global styles एक [shared layout component](/tutorial/part-three/#your-first-layout-component). हा घटक हेडर किंवा फूटर सारख्या साइटवर सामान्य असलेल्या गोष्टींसाठी वापरला जातो.
 
-1. If you don't already have one, create a new directory in your site at `/src/components`.
+1. आपल्याकडे आधीपासूनच एक नसल्यास, आपल्या वेबसाइटवर एक नवीन निर्देशिका तयार करा `/src/components`.
 
-2. Inside the components directory, create two files: `layout.css` and `layout.js`.
+2. घटकांच्या निर्देशिकेत दोन फाईल्स तयार करा. `layout.css` आणि `layout.js`.
 
-3. Add the following to `layout.css`:
+3. खालील गोष्टी जोडा `layout.css`:
 
 ```css:title=/src/components/layout.css
 body {
@@ -64,7 +64,7 @@ body {
 }
 ```
 
-4. Edit `layout.js` to import the CSS file and output layout markup:
+4. सुधारणे `layout.js` आयात करण्यासाठी CSS file आणि output layout markup:
 
 ```jsx:title=/src/components/layout.js
 import React from "react"
@@ -73,7 +73,7 @@ import "./layout.css"
 export default ({ children }) => <div>{children}</div>
 ```
 
-5. Now edit your site's homepage at `/src/pages/index.js` and use the new layout component:
+5. आता आपल्या वेबसाइटचे मुख्यपृष्ठ येथे संपादित करा `/src/pages/index.js` आणि नवीन वापरा layout component:
 
 ```jsx:title=/src/pages/index.js
 import React from "react"
@@ -82,21 +82,21 @@ import Layout from "../components/layout"
 export default () => <Layout>Hello world!</Layout>
 ```
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- [Standard Styling with Global CSS Files](/docs/global-css/)
-- [More about layout components](/tutorial/part-three)
+- [मानक स्टीलिंग Global CSS Files](/docs/global-css/)
+- [बद्दल अधिक layout components](/tutorial/part-three)
 
-## Using Styled Components
+## वापरत आहे Styled Components
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start/) with an index page component
-- [gatsby-plugin-styled-components, styled-components, and babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) installed in `package.json`
+- विद्यमान [Gatsby site](/docs/quick-start/) सह index page component
+- [gatsby-plugin-styled-components, styled-components, and babel-plugin-styled-components](/packages/gatsby-plugin-styled-components/) मध्ये स्थापित `package.json`
 
-### Directions
+### दिशानिर्देश
 
-1. Inside your `gatsby-config.js` file add `gatsby-plugin-styled-components`
+1. आत आपल्या `gatsby-config.js` फाइल जोडा `gatsby-plugin-styled-components`
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -104,11 +104,11 @@ module.exports = {
 }
 ```
 
-2. Open the index page component (`src/pages/index.js`) and import the `styled-components` package
+2. अनुक्रमणिका पृष्ठ घटक उघडा (`src/pages/index.js`) आणि आयात करा `styled-components` पॅकेज
 
-3. Style components by creating style blocks for each element type
+3. प्रत्येक घटक प्रकारासाठी स्टाईल ब्लॉक तयार करुन घटकांचे शैली
 
-4. Apply to the page by including styled components in the JSX
+4. जेएसएक्समध्ये शैलीकृत घटक समाविष्ट करून पृष्ठावर अर्ज करा
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -135,7 +135,7 @@ const Username = styled.h2`
   padding: 0;
 `
 
-const User = props => (
+const User = (props) => (
   <>
     <Avatar src={props.avatar} alt={props.username} />
     <Username>{props.username}</Username>
@@ -158,22 +158,22 @@ export default () => (
 )
 ```
 
-4. Run `gatsby develop` to see the changes
+4. चालवा `gatsby develop` बदल पाहण्यासाठी
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- [More on Using Styled Components](/docs/styled-components/)
-- [Egghead lesson](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
+- [वापरण्याबद्दल अधिक Styled Components](/docs/styled-components/)
+- [Egghead पाठ](https://egghead.io/lessons/gatsby-style-gatsby-sites-with-styled-components)
 
-## Using CSS Modules
+## वापरत आहे CSS Modules
 
-### Prerequisites
+### पूर्व शर्ती
 
-- An existing [Gatsby site](/docs/quick-start/) with an index page component
+- विद्यमान [Gatsby site](/docs/quick-start/) एक सह index page component
 
-### Directions
+### दिशानिर्देश
 
-1. Create a CSS module as `src/pages/index.module.css` and paste the following into the module:
+1. तयार CSS module `src/pages/index.module.css` आणि मॉड्यूलमध्ये खालील पेस्ट करा:
 
 ```css:title=src/pages/index.module.css
 .feature {
@@ -182,7 +182,7 @@ export default () => (
 }
 ```
 
-2. Import the CSS module as a JSX object `style` in the `index.js` file by modifying the page so it looks like the following:
+2. जेएसएक्स ऑब्जेक्ट म्हणून सीएसएस मॉड्यूल आयात करा `style` मध्ये `index.js` पृष्ठ सुधारित करून फाईल करा जेणेकरून ते पुढीलप्रमाणे दिसते:
 
 ```jsx:title=src/pages/index.js
 import React from "react"
@@ -198,41 +198,42 @@ export default () => (
 // highlight-end
 ```
 
-3. Run `gatsby develop` to see the changes.
+3. चालवा `gatsby develop` बदल पहा.
 
 **Note:**
-Notice that the file extension is `.module.css` instead of `.css`, which tells Gatsby that this is a CSS module.
+फाईल एक्सटेंशन असल्याचे लक्षात घ्या `.module.css` त्याऐवजी `.css`,जी गॅटस्बीला सांगते की हे सीएसएस मॉड्यूल आहे.
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- More on [Using CSS Modules](/tutorial/part-two/#css-modules)
-- [Live example on Using CSS modules](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
+- अजून [वापरत आहे CSS Modules](/tutorial/part-two/#css-modules)
+- [वापरण्यावर थेट उदाहरण CSS modules](https://github.com/gatsbyjs/gatsby/blob/master/examples/using-css-modules)
 
-## Using Sass/SCSS
+## वापरत आहे Sass/SCSS
 
-Sass is an extension of CSS that gives you more advanced features like nested rules, variables, mixins, and more.
+सस म्हणजे सीएसएसचा विस्तार आहे जो आपल्याला नेस्टेड नियम, चल, मिक्सिन आणि बरेच काही यासारख्या प्रगत वैशिष्ट्यांसह देतो.
 
-Sass has 2 syntaxes. The most commonly used syntax is "SCSS", and is a superset of CSS. That means all valid CSS syntax, is valid SCSS syntax. SCSS files use the extension `.scss`
+ससकडे 2 वाक्यरचना आहेत. सर्वात सामान्यपणे वापरलेला वाक्यरचना "एससीएसएस" आहे आणि तो सीएसएसचा सुपरसेट आहे. म्हणजेच सर्व वैध सीएसएस वाक्यरचना, वैध एससीएसएस वाक्यरचना आहे. एससीएसएस फायली विस्तार वापरतात `.scss`
 
-Sass will compile `.scss` and `.sass` files to `.css` files for you, so you can write your stylesheets with more advanced features.
+Sass संकलित करेल `.scss` आणि `.sass` मैत्रिणी `.css`
+आपल्यासाठी फायली, जेणेकरून आपण आपल्या स्टाईलशीट अधिक प्रगत वैशिष्ट्यांसह लिहू शकता.
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start/).
+- [Gatsby site](/docs/quick-start/).
 
-### Directions
+### दिशानिर्देश
 
-1. Install the Gatsby plugin [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) and `node-sass`.
+1. गॅट्सबी प्लगइन स्थापित करा [gatsby-plugin-sass](https://www.gatsbyjs.org/packages/gatsby-plugin-sass/) आणि `node-sass`.
 
 `npm install --save node-sass gatsby-plugin-sass`
 
-2. Include the plugin in your `gatsby-config.js` file.
+2. आपल्यामध्ये प्लगइन समाविष्ट करा `gatsby-config.js` फाईल.
 
 ```javascript:title=gatsby-config.js
 plugins: [`gatsby-plugin-sass`],
 ```
 
-3.  Write your stylesheets as `.sass` or `.scss` files and import them. If you don't know how to import styles, take a look at [Styling with CSS](/docs/recipes/#2-styling-with-css)
+3. आपली स्टाईलशीट `.sass` किंवा` .scss` फायली म्हणून लिहा आणि त्या आयात करा. आपल्याला शैली कशी आयात करावीत हे माहित नसल्यास एक कटाक्ष टाका [Styling with CSS](/docs/recipes/#2-styling-with-css)
 
 ```css:title=styles.scss
 $font-stack: Helvetica, sans-serif;
@@ -258,30 +259,30 @@ import "./styles.scss"
 import "./styles.sass"
 ```
 
-_Note: You can use Sass/SCSS files as modules too, like mentioned in the previous recipe about CSS modules, with the difference that instead of `.css` the extensions have to be `.scss` or `.sass`_
+_नोट: आपण सीएसएस मॉड्यूलविषयी पूर्वीच्या रेसिपीमध्ये नमूद केल्याप्रमाणे, सेस / एससीएसएस फायली मॉड्यूल म्हणून देखील वापरू शकता, difference .css`ऐवजी विस्तार`.scss` किंवा` .sass`_ असावेत.
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- [Difference between .sass and .scss](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
-- [Sass guide from the official Sass website](https://sass-lang.com/guide)
-- [A more complete installation tutorial on Sass with some more explanations and more resources](https://www.gatsbyjs.org/docs/sass/)
+- [.Sass आणि .scss मधील फरक](https://responsivedesign.is/articles/difference-between-sass-and-scss/)
+- [अधिकृत Sass वेबसाइटवरील सस मार्गदर्शक](https://sass-lang.com/guide)
+- [काही अधिक स्पष्टीकरण आणि अधिक संसाधनांसह ससवरील अधिक संपूर्ण इन्स्टॉलेशन ट्यूटोरियल](https://www.gatsbyjs.org/docs/sass/)
 
-## Adding a Local Font
+## स्थानिक फॉन्ट जोडणे
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start/)
-- A font file: `.woff2`, `.ttf`, etc.
+- [Gatsby site](/docs/quick-start/)
+- एक फाँट फाइल: `.woff2`, `.ttf`, इ.
 
-### Directions
+### दिशानिर्देश
 
-1. Copy a font file into your Gatsby project, such as `src/fonts/fontname.woff2`.
+1. आपल्या गॅटस्बी प्रोजेक्टमध्ये फॉन्ट फाईल कॉपी करा, जसे की `src/fonts/fontname.woff2`.
 
 ```text
 src/fonts/fontname.woff2
 ```
 
-2. Import the font asset into a CSS file to bundle it into your Gatsby site:
+2. फॉन्ट मालमत्ता आपल्या गॅटस्बी साइटमध्ये बंडल करण्यासाठी सीएसएस फाईलमध्ये आयात करा:
 
 ```css:title=src/css/typography.css
 @font-face {
@@ -290,7 +291,7 @@ src/fonts/fontname.woff2
 }
 ```
 
-**Note:** Make sure the font name is referenced from the relevant CSS, e.g.:
+**टीप:** संबंधित सीएसएसवरून फॉन्टचे नाव संदर्भित असल्याचे सुनिश्चित करा.:
 
 ```css:title=src/components/layout.css
 body {
@@ -298,31 +299,31 @@ body {
 }
 ```
 
-By targeting the HTML `body` element, your font will apply to most text on the page. Additional CSS can target other elements, such as `button` or `textarea`.
+एचटीएमएल `बॉडी` घटकांना लक्ष्य करून, आपला फॉन्ट पृष्ठावरील बर्‍याच मजकूरावर लागू होईल. अतिरिक्त सीएसएस इतर घटकांना लक्ष्य करू शकते, जसे की are बटण`किंवा`मजकूर.
 
-If fonts are not updating following steps above, make sure to replace the existing font-family in relevant CSS.
+फॉन्ट वरील चरणांचे अद्यतनित करीत नसल्यास संबंधित सीएसएसमध्ये विद्यमान फॉन्ट-कुटूंब पुनर्स्थित करणे सुनिश्चित करा.
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- More on [importing assets into files](/docs/importing-assets-into-files/)
+- अजून [फायलींमध्ये मालमत्ता आयात करीत आहे](/docs/importing-assets-into-files/)
 
-## Using Emotion
+## वापरत आहे Emotion
 
-[Emotion](https://emotion.sh) is a powerful CSS-in-JS library that supports both inline CSS styles and styled components. You can use each styling feature individually or together in the same file.
+[Emotion](https://emotion.sh) एक शक्तिशाली सीएसएस-इन-जेएस लायब्ररी आहे जे इनलाइन सीएसएस शैली आणि स्टाईल केलेल्या घटकांना समर्थन देते. आपण प्रत्येक स्टाईलिंग वैशिष्ट्य स्वतंत्रपणे किंवा त्याच फाईलमध्ये एकत्र वापरू शकता.
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start)
+- [Gatsby site](/docs/quick-start)
 
-### Directions
+### पूर्व शर्ती
 
-1. Install the [Gatsby Emotion plugin](/packages/gatsby-plugin-emotion/) and Emotion packages.
+1. स्थापित करा [Gatsby Emotion plugin](/packages/gatsby-plugin-emotion/) आणि Emotion packages.
 
 ```shell
 npm install --save gatsby-plugin-emotion @emotion/core @emotion/styled
 ```
 
-2. Add the `gatsby-plugin-emotion` plugin to your `gatsby-config.js` file:
+2. जोडा `gatsby-plugin-emotion` आपल्या प्लगइन `gatsby-config.js` फाईल:
 
 ```javascript:title=gatsby-config.js
 module.exports = {
@@ -330,9 +331,10 @@ module.exports = {
 }
 ```
 
-3. If you don't already have one, create a page in your Gatsby site at `src/pages/emotion-sample.js`.
+3. आपल्याकडे आधीपासूनच एक नसल्यास, आपल्या गॅटस्बी साइटवर एक पृष्ठ तयार करा `src/pages/emotion-sample.js`.
 
-Import Emotion's `css` core package. You can then use the `css` prop to add [Emotion object styles](https://emotion.sh/docs/object-styles) to any element inside a component:
+भावनांचे `css` कोर पॅकेज आयात करा. त्यानंतर आपण जोडण्यासाठी `css` प्रॉप वापरू शकता [Emotion object styles](https://emotion.sh/docs/object-styles)
+घटकांमधील कोणत्याही घटकास:
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -352,7 +354,7 @@ export default () => (
 )
 ```
 
-4. To use Emotion's [styled components](https://emotion.sh/docs/styled), import the package and define them using the `styled` function.
+4. वापरणे Emotion's [styled components](https://emotion.sh/docs/styled),पॅकेज आयात करा आणि त्यांना `स्टाईलड फंक्शनचा वापर करून परिभाषित करा.
 
 ```jsx:title=src/pages/emotion-sample.js
 import React from "react"
@@ -373,35 +375,37 @@ export default () => (
 )
 ```
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- [Using Emotion in Gatsby](/docs/emotion/)
+- [गॅटस्बी मध्ये Emotion वापरणे](/docs/emotion/)
 - [Emotion website](https://emotion.sh)
-- [Getting started with Emotion and Gatsby](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
+- [भावना आणि गॅटस्बीसह प्रारंभ करणे](https://egghead.io/lessons/gatsby-getting-started-with-emotion-and-gatsby)
 
-## Using Google Fonts
+## गूगल फॉन्ट वापरणे
 
-Hosting your own [Google Fonts](https://fonts.google.com/) locally within a project means they won't have to be fetched over the network when your site loads, increasing your site's speed index by up to ~300 milliseconds on desktop and 1+ seconds on 3G. It's also recommended to limit custom font usage to only the essential for performance.
+आपले स्वतःचे होस्टिंग [Google Fonts](https://fonts.google.com/)
+प्रोजेक्ट अंतर्गत स्थानिक अर्थ म्हणजे आपली साइट लोड होते तेव्हा ते नेटवर्कवर आणणे आवश्यक नसते, डेस्कटॉपवर आपल्या साइटची गती निर्देशांक ~ 300 मिलीसेकंद आणि 3 जी वर 1+ सेकंदाने वाढवते. केवळ कार्यप्रदर्शनासाठी सानुकूल फॉन्ट वापर मर्यादित ठेवण्याची देखील शिफारस केली जाते.
 
-### Prerequisites
+### पूर्व शर्ती
 
-- A [Gatsby site](/docs/quick-start)
-- The [Gatsby CLI](/docs/gatsby-cli/) installed
-- Choosing a font package from [the typefaces project](https://github.com/KyleAMathews/typefaces)
+- [Gatsby site](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli/)
+- वरून फॉन्ट पॅकेज निवडत आहे [the typefaces project](https://github.com/KyleAMathews/typefaces)
 
-### Directions
+### दिशानिर्देश
 
-1. Run `npm install --save typeface-your-chosen-font`, replacing `your-chosen-font` with the name of the font you want to install from [the typefaces project](https://github.com/KyleAMathews/typefaces).
+1. चालवा `npm install --save typeface-your-chosen-font`, बदलत आहे `your-chosen-font` आपण स्थापित करू इच्छित फॉन्टच्या नावासह [the typefaces project](https://github.com/KyleAMathews/typefaces).
 
-An example to load the popular 'Source Sans Pro' font would be: `npm install --save typeface-source-sans-pro`.
+लोकप्रिय 'सोर्स सॅन्स प्रो' फॉन्ट लोड करण्याचे उदाहरणः
+`npm install --save typeface-source-sans-pro`.
 
-2. Add `import "typeface-your-chosen-font"` to a layout template, page component, or `gatsby-browser.js`.
+2. जोडा `import "typeface-your-chosen-font"` लेआउट टेम्पलेट, पृष्ठ घटक किंवा वर `gatsby-browser.js`.
 
 ```jsx:title=src/components/layout.js
 import "typeface-your-chosen-font"
 ```
 
-3. Once it's imported, you can reference the font name in a CSS stylesheet, CSS Module, or CSS-in-JS.
+3. एकदा ते आयात झाल्यानंतर आपण सीएसएस स्टाईलशीट, सीएसएस मॉड्यूल किंवा सीएसएस इन-जेएस मधील फॉन्ट नावाचा संदर्भ घेऊ शकता.
 
 ```css:title=src/components/layout.css
 body {
@@ -409,26 +413,27 @@ body {
 }
 ```
 
-_NOTE: So for the above example, the relevant CSS declaration would be `font-family: 'Source Sans Pro';`_
+_नोट: तर वरील उदाहरणांसाठी, संबंधित सीएसएस घोषणापत्र असेल `font-family: 'Source Sans Pro';`_
 
-### Additional resources
+### अतिरिक्त संसाधने
 
-- [Typography.js](/docs/typography-js/) - Another option for using Google fonts on a Gatsby site
+- [Typography.js](/docs/typography-js/) - गॅटस्बी साइटवर गूगल फॉन्ट वापरण्यासाठी दुसरा पर्याय
+
 - [The Typefaces Project Docs](https://github.com/KyleAMathews/typefaces/blob/master/README.md)
 - [Live example on Kyle Mathews' blog](https://www.bricolage.io/typefaces-easiest-way-to-self-host-fonts/)
 
-## Using Font Awesome
+## वापरत आहे Font Awesome
 
-Using [Font Awesome](https://fontawesome.com/) gives you access to thousands of icons for use on your site. Since Gatsby sites are React sites, it's recommended to use the [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) SVG library.
+वापरत आहे [Font Awesome](https://fontawesome.com/) आपल्या साइटवरील वापरासाठी आपल्याला हजारो चिन्हांमध्ये प्रवेश देते. गॅटस्बी साइट प्रतिक्रिया साइट असल्याने, वापरण्याची शिफारस केली जाते [react-fontawesome](https://github.com/FortAwesome/react-fontawesome) SVG ग्रंथालय.
 
-### Prerequisites
+### पूर्व शर्ती
 
-- The [Gatsby CLI](/docs/gatsby-cli/) installed
-- A [Gatsby site](/docs/quick-start)
+- [Gatsby CLI](/docs/gatsby-cli/)
+- [Gatsby site](/docs/quick-start)
 
-### Directions
+### दिशानिर्देश
 
-1. Install the `react-fontawesome` dependencies.
+1. स्थापित करा `react-fontawesome` dependencies.
 
 ```shell
 npm install @fortawesome/fontawesome-svg-core  @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
@@ -436,7 +441,7 @@ npm install @fortawesome/fontawesome-svg-core  @fortawesome/free-brands-svg-icon
 
 > Note that there are multiple icon libraries within `react-fontawesome`. You may also be interested in `free-regular-svg-icons` and `free-solid-svg-icons` which you would install the same way.
 
-2. Import the `FontAwesomeIcon` component and the icon you want to use. Then use the icon as a component directly in your JSX files:
+2. आयात करा `FontAwesomeIcon` घटक आणि आपण वापरू इच्छित चिन्ह. त्यानंतर आपल्या जेएसएक्स फायलींमध्ये घटक म्हणून चिन्हाचा थेट वापर करा:
 
 ```jsx:title=index.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -451,9 +456,9 @@ const IndexPage = () => (
 export default IndexPage
 ```
 
-> This example imports a single, specific icon and uses it for improved performance. As an alternative, you can [import the icons and build a library](https://github.com/FortAwesome/react-fontawesome#build-a-library-to-reference-icons-throughout-your-app-more-conveniently).
+> हे उदाहरण एकल, विशिष्ट चिन्ह आयात करते आणि सुधारित कामगिरीसाठी वापरते. एक पर्याय म्हणून, आपण हे करू शकता [import the icons and build a library](https://github.com/FortAwesome/react-fontawesome#build-a-library-to-reference-icons-throughout-your-app-more-conveniently).
 
-### Additional resources
+### अतिरिक्त संसाधने
 
 - [Font Awesome](https://fontawesome.com/)
 - [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
