@@ -2,7 +2,6 @@
 title: Overview of the Docs
 ---
 
-This is a stub. Help our community expand it.
+हा एक स्टब आहे. आमच्या कॉम्म्युनिटीचा विस्तार करण्यात मदत करा.
 
-Please use the [Gatsby Style Guide](/contributing/gatsby-style-guide/) to ensure your
-pull request gets accepted.
+[Gatsby Style Guide](/contributing/gatsby-style-guide/) कृपया आपली पूल रिक्वेस्ट स्वीकारले गेले असल्याची खात्री करण्यासाठी.
